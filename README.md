@@ -2,8 +2,8 @@
 A machine learning model used to perform multiclass-classification on various types of Jobs .
 
 ## How it works 
-- You provide a text 
-- It undergoes through various modules like preprocessing,vectorization and feature reduction and then predicts the output
+- You provide an digital advertisment text
+- It predicts whether the given Job Type is Retail or IT Jobs or House Selling or Banking or Rent- Apartment
 
 ## Required Libraries 
 - TFIDF Vectorizer
@@ -18,7 +18,7 @@ A machine learning model used to perform multiclass-classification on various ty
 - To run the file for demo using streamlit : streamlit run streamlit_app.py 
 
 ## File Structure : 
-├── models
+|── models
 │   ├── finalized_model_RF.sav
 │   |── finalized_model_XGB.sav
 |   ├── svd.sav
@@ -28,7 +28,7 @@ A machine learning model used to perform multiclass-classification on various ty
 |__ helper_functions.py 
 │__ requirements.txt
 ├── main.py
-└── streamlit_app.py 
+|── streamlit_app.py 
 
 
 
