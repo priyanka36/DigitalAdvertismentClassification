@@ -5,7 +5,7 @@ import pandas as pd
 
 st.header("Inferencing Digital Advertisment Classification")
 
-text = st.text_area("INPUT_TEXT_FOR_ANALYSIS",height=200,placeholder=None)
+text = st.text_area("INPUT_TEXT_FOR_ANALYSIS", height=200,placeholder=None)
 inference_obj = Inferencing()
 
 if st.button('Predict'):
