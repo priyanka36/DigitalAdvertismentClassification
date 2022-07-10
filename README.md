@@ -17,18 +17,6 @@ A machine learning model used to perform multiclass-classification on various ty
 - To run the file through code : python3 main.py
 - To run the file for demo using streamlit : streamlit run streamlit_app.py 
 
-## File Structure : 
-|── models
-│   ├── finalized_model_RF.sav
-│   |── finalized_model_XGB.sav
-|   ├── svd.sav
-|   |── vectorizer.sav
-|
-├── config.py
-|__ helper_functions.py 
-│__ requirements.txt
-├── main.py
-|── streamlit_app.py 
 
 
 
