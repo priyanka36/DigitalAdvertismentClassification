@@ -7,7 +7,6 @@ st.header("Inferencing Digital Advertisment Classification")
 
 txt = st.text_area("INPUT_TEXT_FOR_ANALYSIS",height=200,placeholder=None)
 inference_obj = Inferencing()
-text = "jobsjobs in new york nyjava backend developer jobs in new york nyjun 05 2022contact namechristopher10292new york nyunited states0 32 yearsjob openings are available across usdoc docx pdf extensions are supported0500get best matching jobs through email mandatorydoc docx pdf extensions are supported05000 16 years0 16 years0 40 years0 18 yearsstellent it llcjersey city nj usrhp soft incnew york ny uspayoneernew york ny usavtech solutionsfranklin lakes nj useuleritynew york ny ussnakorpio group incwayne nj uspegasus knowledge solutionsnew york ny usinfovision incpiscataway nj us0 40 years0 2 yearsget best matching jobs through email mandatoryxxneed job hiring"
 
 if st.button('Predict'):
 
