@@ -81,24 +81,23 @@ class Inferencing :
 
         Input : Cleaned Text & Features used for Prediction
 
-        Output : Cleaned Text, Label_definition from 4 classes and score of the predicted output
+        Output : Cleaned Text, Label_definition from 5 classes and score of the predicted output
         
         """
         
         output = dict()
-        score = model.predict_proba(features)
-        if score[0][0]>score[0][1]>score[0][2]>score[0][3]>score[0][4]>score[0][5]:
+        score = model.predict_proba(features)       
+        if score[0][0]>score[0][1] and score[0][0]>score[0][2] and score[0][0]>score[0][3] and score[0][0]>score[0][4]:
             score = round(score[0][0],4)
-        elif score[0][1]>score[0][0]>score[0][2]>score[0][3]>score[0][4]>score[0][5]:
+        elif score[0][1]>score[0][2] and score[0][1]>score[0][0] and score[0][1]>score[0][3] and score[0][1]>score[0][4]:
             score = round(score[0][1],4)
-        elif score[0][2]>score[0][0]>score[0][1]>score[0][3]>score[0][4]>score[0][5]:
+        elif score[0][2]>score[0][1] and score[0][2]>score[0][0] and score[0][2]>score[0][3] and score[0][2]>score[0][4]:
             score = round(score[0][2],4)
-        elif score[0][3]>score[0][0]>score[0][1]>score[0][2]>score[0][4]>score[0][5]:
+        elif score[0][3]>score[0][0] and score[0][3]>score[0][1] and score[0][3]>score[0][2] and score[0][3]>score[0][4]:
             score = round(score[0][3],4)
-        elif score[0][4]>score[0][0]>score[0][1]>score[0][3]>score[0][4]>score[0][5]:
+        else:
             score = round(score[0][4],4)
-        else: 
-            score = round(score[0][5],4)
+        
 
         label = model.predict(features)
         if label[0] == 0 :
@@ -109,11 +108,9 @@ class Inferencing :
             label_def = "Rent-Apartment"
         elif label[0] == 3 :
             label_def = "Retail"
-        elif label[0] == 4 :
+        else : 
             label_def = "Sell-House"
-        else :
-            label_def = "No label"
-
+        
         text = cleaned_text 
 
         output = { "text" : text , "label_definition" : label_def ,"score" : score }
