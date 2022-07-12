@@ -7,8 +7,12 @@ nltk.download('wordnet')
 import pickle
 import json
 import os 
+import warnings
+warnings.filterwarnings('ignore')
 from io import StringIO
 from nltk.corpus import stopwords
+
+
 
 
 class Inferencing :

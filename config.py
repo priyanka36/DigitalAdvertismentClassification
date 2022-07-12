@@ -1,6 +1,8 @@
 import os 
 import sys
 import pickle
+import warnings
+warnings.filterwarnings('ignore')
 
 #get current working directory
 cwd = os.getcwd()
@@ -16,6 +18,7 @@ name_of_feature_reducer_model = "svd.sav"
 main_model_path = path + name_of_main_model
 feature_model_path = path + name_of_feature_model
 dimensionality_reducer = path + name_of_feature_reducer_model 
+
 
 
 # load the models 
