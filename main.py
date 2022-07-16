@@ -9,8 +9,6 @@ text2 = "hiring immediately new york style pizzeria is hiring delivery drivers m
 
 
 if __name__ == "__main__":
-    
-    
     text = text2
     inference_obj = Inferencing()
     cleaned_text = inference_obj.preprocessing(text)

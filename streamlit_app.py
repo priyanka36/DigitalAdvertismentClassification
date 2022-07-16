@@ -1,7 +1,12 @@
 import streamlit as st
 from helper_functions import Inferencing
-from config import model,feature_extraction_model,svd_model
+from config import model,feature_extraction_model,svd_model,data_file_path
 import pandas as pd
+import random
+
+data = pd.read_csv(data_file_path)
+data.dropna(inplace=True)
+data.reset_index(drop=True)
 
 st.header("Inferencing Digital Advertisment Classification")
 
@@ -13,9 +18,19 @@ if st.button('Predict'):
     cleaned_text = inference_obj.preprocessing(text)
     features = inference_obj.feature_extract(cleaned_text,feature_extraction_model,svd_model)
     predicted_output = inference_obj.predict_text(cleaned_text,features,model)
+
     st.write('**TEXT** :', predicted_output["text"]) 
     st.write('**LABEL** :',predicted_output["label_definition"]) 
     st.write('**SCORE** :', predicted_output["score"] )  
+    predicted_label = predicted_output["label_definition"]
+    if predicted_label:
+        select_data = data[data.JobType == predicted_label]
+        st.subheader('Recommended Jobs')
+        select_data = select_data[["title"]][:3]
+        st.dataframe(select_data)
+    else : 
+        st.write("No Jobs to Recommend")
+
 else:
     st.write('Press predict button to predict')
 
