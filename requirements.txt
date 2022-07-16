@@ -374,7 +374,7 @@ widgetsnbextension==3.6.0
 wrapt==1.14.1
 wsproto==1.1.0
 xgboost==0.90
-xkit==0.0.0
+#xkit==0.0.0
 yarg==0.1.9
 yarl==1.7.2
 zipp==3.1.0
