@@ -6,7 +6,7 @@ aiormq==3.3.1
 altair==4.2.0
 anyio==3.5.0
 APScheduler==3.7.0
-apturl==0.5.2
+#apturl==0.5.2
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 asgiref==3.5.1
