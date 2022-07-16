@@ -43,7 +43,7 @@ cloudpickle==1.6.0
 colorama==0.4.3
 colorclass<=2.2.2
 coloredlogs<=15.0.1
-#colorhash<=1.0.4
+colorhash<=1.0.0
 command-not-found==0.3
 ConfigArgParse==1.5.3
 configobj==5.0.6
