@@ -351,7 +351,7 @@ typing-utils==0.1.0
 tzdata==2022.1
 # tzlocal==2.1
 #ubuntu-advantage-tools==27.8
-ubuntu-drivers-common==0.0.0
+#ubuntu-drivers-common==0.0.0
 ufw==0.36
 ujson==4.3.0
 unattended-upgrades==0.1
