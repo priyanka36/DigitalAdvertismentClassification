@@ -243,7 +243,7 @@ python-dateutil==2.8.2
 #python-debian===0.1.36ubuntu1
 python-dotenv==0.19.2
 python-engineio==4.3.2
-python-libtorrent==1.1.13
+#python-libtorrent==1.1.13
 python-multipart==0.0.5
 python-socketio==5.6.0
 python-xlib==0.23
