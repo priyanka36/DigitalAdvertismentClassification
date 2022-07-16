@@ -62,8 +62,8 @@ debugpy==1.6.0
 defusedxml==0.7.1
 deluge==2.0.3
 distlib==0.3.4
-distro==1.4.0
-distro-info===0.23ubuntu1
+#distro==1.4.0
+#distro-info===0.23ubuntu1
 dnspython==1.16.0
 docopt==0.6.2
 docx2txt==0.8
