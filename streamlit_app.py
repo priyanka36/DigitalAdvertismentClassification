@@ -25,7 +25,7 @@ if st.button('Predict'):
     predicted_label = predicted_output["label_definition"]
     if predicted_label:
         select_data = data[data.JobType == predicted_label]
-        st.subheader('Recommended Jobs')
+        st.subheader('Similar Jobs')
         select_data = select_data[["title"]][:3]
         st.dataframe(select_data)
     else : 
