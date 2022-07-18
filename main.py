@@ -9,7 +9,7 @@ text2 = "hiring immediately new york style pizzeria is hiring delivery drivers m
 
 
 if __name__ == "__main__":
-    text = text2
+    text = text
     inference_obj = Inferencing()
     cleaned_text = inference_obj.preprocessing(text)
     features = inference_obj.feature_extract(cleaned_text,feature_extraction_model,svd_model)

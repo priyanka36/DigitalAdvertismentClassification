@@ -10,10 +10,16 @@ path = os.path.join(cwd,"models/")
 data_path = os.path.join(cwd,"data/")
 
 
-# test model version 1
-name_of_main_model = "finalized_model_XGB.sav"
-name_of_feature_model = "vectorizer.sav"
-name_of_feature_reducer_model = "svd.sav"
+# uncomment this to use the version one model while comment the version 2 model 
+# name_of_main_model = "finalized_model_XGB.sav"
+# name_of_feature_model = "vectorizer.sav"
+# name_of_feature_reducer_model = "svd.sav"
+
+
+# uncomment this to use the version two model
+name_of_main_model = "finalized_model_XGBV2.sav"
+name_of_feature_model = "vectorizerV2.sav"
+name_of_feature_reducer_model = "svdV2.sav"
 
 
 #provide the paths
