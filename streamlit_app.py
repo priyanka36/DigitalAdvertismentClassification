@@ -1,6 +1,6 @@
 import streamlit as st
 from helper_functions import Inferencing
-from config import model,feature_extraction_model,svd_model,data_file_path
+from config import model, feature_extraction_model, svd_model, data_file_path
 import pandas as pd
 import random
 
@@ -10,27 +10,32 @@ data.reset_index(drop=True)
 
 st.header("Inferencing Digital Advertisment Classification")
 
-text = st.text_area("INPUT_TEXT_FOR_ANALYSIS", height=200,placeholder=None)
+text = st.text_area("INPUT_TEXT_FOR_ANALYSIS", height=200, placeholder=None)
 inference_obj = Inferencing()
 
-if st.button('Predict'):
+if st.button("Predict"):
 
     cleaned_text = inference_obj.preprocessing(text)
-    features = inference_obj.feature_extract(cleaned_text,feature_extraction_model,svd_model)
-    predicted_output = inference_obj.predict_text(cleaned_text,features,model)
+    features = inference_obj.feature_extract(
+        cleaned_text, feature_extraction_model, svd_model
+    )
+    predicted_output = inference_obj.predict_text(cleaned_text, features, model)
+    predicted_score_categories = predicted_output["scores_table"]
 
-    st.write('**TEXT** :', predicted_output["text"]) 
-    st.write('**LABEL** :',predicted_output["label_definition"]) 
-    st.write('**SCORE** :', predicted_output["score"] )  
+    st.write("**INPUT TEXT** :", predicted_output["text"])
+    st.write("**PREDICTED CATEGORY** :", predicted_output["label_definition"])
+    st.write("**PREDICTED SCORE** :", predicted_output["score"])
+    st.write("**SCORES FOR EACH CATEGORY** :")
+    st.json(predicted_score_categories)
     predicted_label = predicted_output["label_definition"]
     if predicted_label:
         select_data = data[data.JobType == predicted_label]
-        st.subheader('Similar Jobs')
-        select_data = select_data[["title"]][:3]
+        st.subheader("Similar Digital Advertisments")
+        select_data = select_data[["title"]][:5]
+        select_data = select_data.reset_index(drop=True)
         st.dataframe(select_data)
-    else : 
-        st.write("No Jobs to Recommend")
+    else:
+        st.write("No Similar Advertisments to Recommend")
 
 else:
-    st.write('Press predict button to predict')
-
+    st.write("Press predict button to predict")
